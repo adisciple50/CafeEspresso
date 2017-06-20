@@ -13,3 +13,7 @@ ul#navbar-nav.first{
     border-top-right-radius:15px;
     border-bottom-right-radius:15px;
 }
+
+.rounded{
+    border-radius: 4px;
+}

@@ -4,3 +4,12 @@ body {
 .hveneer{
     background-image: url("../img/wikimedia-veneer.jpg");
 }
+ul#navbar-nav.last{
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px;
+}
+
+ul#navbar-nav.first{
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px;
+}

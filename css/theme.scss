@@ -6,7 +6,8 @@
  * Based on Bootstrap
 */
 
-@import url('https://fonts.googleapis.com/css?family=Lato');
+//@import url('https://fonts.googleapis.com/css?family=Lato');
+// @import "border-radius";
 
 // Reassign color vars to semantic color scheme
 $brand-primary:             #ff8119;
@@ -62,7 +63,7 @@ $display2-size: 5.5 * $font-size-base;
 $display3-size: 4.5 * $font-size-base;
 $display4-size: 3.5 * $font-size-base;
 
-$border-radius: 0px;
+$border-radius: 4px;
 $border-radius-lg: $border-radius * 1.2;
 $border-radius-sm: $border-radius * .8;
 
@@ -70,8 +71,8 @@ html,body {
   scroll-behavior: smooth;
 }
 
-
 $body-bg: #bbb3af;
 
+//@import url('Bootstrap4/bootstrap.scss')
 @import 'bootstrap-4.0.0-alpha.6';
 //@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css';

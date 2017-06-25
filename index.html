@@ -12,30 +12,28 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css" rel="stylesheet"> </head>
 
 <body>
-
-    <div id="fb-root"></div>
-    
-    <!-- facebook sdk header import -->
-    <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- END facebook sdk header import -->
-    
-    <nav class="navbar navbar-expand-md navbar-light bg-faded text-center hveneer">
+  <div id="fb-root"></div>
+  <!-- facebook sdk header import -->
+  <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!-- END facebook sdk header import -->
+  <nav class=" navbar navbar-expand-md navbar-light bg-faded text-center hveneer">
     <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <button class="navbar-toggler navbar-toggler-right bg-faded" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon bg-faded"></span></button>
       <div class="collapse navbar-collapse text-center justify-content-center border-radius" id="navbar2SupportedContent">
         <div class="btn-group">
           <a href="#Location" class="btn btn-primary">Our Location</a>
           <a href="#Situation" class="btn btn-primary">About Us</a>
           <a href="#Gallery" class="btn btn-primary">Gallery
             <br> </a>
-          <a href="#Social" class="btn btn-primary">Our Buzz</a> 
+          <a href="#Social" class="btn btn-primary">Our Buzz</a>
           <a href="#Menu" class="btn btn-primary">The Tariff</a>
           <a href="#OpeningTimes" class="btn btn-primary">Opening Times</a>
         </div>
@@ -104,23 +102,39 @@
           <!-- put facebook gallery here -->
           <h1 class="text-center">Our Buzz</h1>
           <div class="py-5">
-          
-          
             <!-- https://developers.facebook.com/docs/plugins/page-plugin -->
             <div class="fb-page" data-href="https://www.facebook.com/pg/sbux71/" data-tabs="timeline" data-width="500" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"></div>
-              
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
   <div class="bg-faded text-center py-5 my-3" id="Menu">
     <div class="container">
       <div class="row">
         <div class="col-md-12" id="fb-gallery">
           <!-- put facebook gallery here -->
           <h1 class="text-center">The Menu And Tariff</h1>
-          <div class="py-5"></div>
+          <table class="table text-center text-white">
+            <tbody>
+              <tr>
+                <th class="text-center">First Name</th>
+                <th class="text-center">Last Name</th>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Jacob</td>
+                <td>Thornton</td>
+              </tr>
+              <tr>
+                <td>Larry</td>
+                <td>the Bird</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -131,7 +145,26 @@
         <div class="col-md-12" id="fb-gallery">
           <!-- put facebook gallery here -->
           <h1 class="text-center">Opening Times</h1>
-          <div class="py-5"></div>
+          <table class="table text-white">
+            <tbody>
+              <tr>
+                <th class="text-center">Monday</th>
+                <th class="text-center">08.30 - 15.00</th>
+              </tr>
+              <tr>
+                <td class="text-center">Tuesday - Friday</td>
+                <td class="text-center">08.30</td>
+              </tr>
+              <tr>
+                <td class="text-center">Saturday</td>
+                <td class="text-center">06.30 - 16.00</td>
+              </tr>
+              <tr>
+                <td class="text-center">Sundays &amp; Bank Holidays</td>
+                <td class="text-center">CLOSED</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

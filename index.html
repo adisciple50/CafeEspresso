@@ -18,20 +18,20 @@
 
   <!-- begin social template -->
   <script type="text/x-handlebars-template" id="social-tmpl">
-    <div class="col-md-4 container-fluid" id="comment-{{index}}">
+    <div class="col-md-4 container-fluid" id="comment-{{@index}}">
       <div class="col-sm-3">
-          <img src="{{picture}}"></img>
+          <img src="{{#each from.picture}}"></img>
       </div>
       <div class="col-sm-8">
-        <p>{{name}}</p>
-        <p>{{message}}</p>
+        <p>{{#each name}}</p>
+        <p>{{#each message}}</p>
       </div>
     </div>
   </script>
   <!-- begin gallery template -->
   <script type="text/x-handlebars-template" id="gallery-tmpl">
-    <div class="col-md-3 container-fluid" id="comment-{{index}}">
-      <img src="{{picture}}">
+    <div class="col-md-3 container-fluid" id="comment-{{@index}}">
+      <img src="{{#each picture}}">
     </div>
   </script>
 </head>
@@ -142,6 +142,24 @@
           <h1 class="text-center">Our Buzz</h1>
           <div class="py-5">
             <!-- facebook-feed -->
+            <script>
+              // straight up copy of js/social.js
+              var fbpage = '/156900194833233';
+              var fbfeed = fbpage + '/feed';
+              var template = Handlebars.compile( $("#social-tmpl").html() );
+              $(document).ready(function() {
+                  FB.init(facebook_settings); // initialise facebook api.
+                  FB.api(fbfeed,fbsocial_feed(callback)); //returns an array of facebook "post" objects to "callback"
+              });
+
+
+              function fbsocial_feed(callback){
+                $(callback).each(function(index, el) {
+                  $("#fbsocial").append(template({message:el['message'],picture_src:el['from']['picture'],name:el['from']['first_name']}));//render a template from the index.html <head>
+                });
+              }
+
+            </script>
             <div id="fbsocial">
 
             </div>

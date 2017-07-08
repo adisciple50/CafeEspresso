@@ -15,7 +15,7 @@
 
   <!-- begin social template -->
   <script type="text/x-handlebars-template" id="social-tmpl">
-    <div class="col-md-6" id="comment-{{index}}">
+    <div class="col-md-4 container-fluid" id="comment-{{index}}">
       <div class="col-sm-3">
           <img src="{{picture}}">
       </div>
@@ -27,13 +27,30 @@
   </script>
   <!-- begin gallery template -->
   <script type="text/x-handlebars-template" id="gallery-tmpl">
-    <div class="col-md-3" id="comment-{{index}}">
+    <div class="col-md-3 container-fluid" id="comment-{{index}}">
       <img src="{{picture}}">
     </div>
   </script>
 </head>
 
 <body>
+  <!-- load facebook api for other scripts -->
+  <script>
+  $.getScript('js/app.js');
+  window.fbAsyncInit = function() {
+    FB.init(facebook_settings);
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!-- end facebook loader -->
 
   <nav class=" navbar navbar-expand-md navbar-light bg-faded text-center hveneer">
     <div class="container">

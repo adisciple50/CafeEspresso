@@ -9,7 +9,21 @@
   <link rel="stylesheet" href="css/theme.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css" rel="stylesheet"> </head>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css" rel="stylesheet">
+
+  <!-- begin social template -->
+  <script type="text/x-handlebars-template" id="tmpl">
+    <div class="col-md-6" id="comment-{{index}}">
+      <div class="col-sm-3">
+          <img src="{{picture}}">
+      </div>
+      <div class="col-sm-8">
+        <p>{{name}}</p>
+        <p>{{message}}</p>
+      </div>
+    </div>
+  </script>
+</head>
 
 <body>
   <div id="fb-root"></div>
@@ -102,8 +116,10 @@
           <!-- put facebook gallery here -->
           <h1 class="text-center">Our Buzz</h1>
           <div class="py-5">
-            <!-- https://developers.facebook.com/docs/plugins/page-plugin -->
-            <div class="fb-page" data-href="https://www.facebook.com/pg/sbux71/" data-tabs="timeline" data-width="500" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"></div>
+            <!-- facebook-feed -->
+            <div id="fbsocial">
+
+            </div>
           </div>
         </div>
       </div>
@@ -177,7 +193,7 @@
   <div class="bg-faded text-center py-5 my-3" id="OpeningTimes">
     <div class="container">
       <div>
-        <div class="row col-md-12">         
+        <div class="row col-md-12">
           <h1 class="text-center">Opening Times</h1>
           <table class="table text-white">
             <tbody>

@@ -1,7 +1,7 @@
 // javascript settings file.
 
 var facebook_settings = {
-    appId            : '{1d38bb654a422b349b009f29697e4d2}',
+    appId            : '139288266642775',
     autoLogAppEvents : true,
     status           : true,
     xfbml            : true,

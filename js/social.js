@@ -11,6 +11,7 @@
 $.getScript("js/app.js");
 $.getScript("https://cdn.jsdelivr.net/handlebarsjs/4.0.8/handlebars.min.js");
 
+var fbpage = '/156900194833233';
 var fbfeed = fbpage + '/feed';
 var template = Handlebars.compile( $("#social-tmpl").html() );
 $(document).ready(function() {

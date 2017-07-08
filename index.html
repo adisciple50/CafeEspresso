@@ -6,8 +6,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js"></script>
-  <script src="js/social.js"></script>
-  <script src="js/gallery.js"></script>
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -148,7 +147,13 @@
               var fbfeed = fbpage + '/feed';
               var template = Handlebars.compile( $("#social-tmpl").html() );
               $(document).ready(function() {
-                  FB.init(facebook_settings); // initialise facebook api.
+                FB.init({
+                    appId            : '139288266642775',
+                    autoLogAppEvents : true,
+                    status           : true,
+                    xfbml            : true,
+                    version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
+                  }); // initialise facebook api.
                   FB.api(fbfeed,fbsocial_feed(callback)); //returns an array of facebook "post" objects to "callback"
               });
 

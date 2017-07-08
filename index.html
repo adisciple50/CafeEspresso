@@ -166,13 +166,15 @@
               var fbfeed = fbpage + '/feed';
               var template = Handlebars.compile( $("#social-tmpl").html() );
               $(document).ready(function() {
-                FB.init({
+                  /*
+                  FB.init({
                     appId            : '139288266642775',
                     autoLogAppEvents : true,
                     status           : true,
                     xfbml            : true,
                     version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
-                  }); // initialise facebook api.
+                  });// initialise facebook api.
+                  */
                   FB.api(fbfeed,function(response){fbsocial_feed(response);}); //returns an array of facebook "post" objects to "callback"
               });
 

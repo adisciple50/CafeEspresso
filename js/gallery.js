@@ -1,21 +1,14 @@
-// mozila and others import script in the style of ye olde html 3
-import("jquery/src/jquery.js");
-import * as FB from "facebook/sdk.js";
-$(document).ready(
-    load_facebook();
+import {FB} from "//connect.facebook.net/en_GB/sdk.js";
+import * from "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js";
+import * as {HANDLEBARS} from "http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-latest.js";
+import (facebook_settings,fbpage) from "app.js";
+;
+
+
+
+var fbfeed = fbpage + '/feed';
+var template = Handlebars.compile( $("#gallery-tmpl").html() );
+$(document).ready(function() {
+    FB.init(facebook_settings); // initialise facebook api.
+    FB.api(fbfeed,fbsocial_feed(callback)); //returns an array of facebook "post" objects to "callback"
 });
-
-FB.
-
-function load_facebook(){
-    $.ajaxSetup({ cache: true });
-    $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-      FB.init({
-        appId: '{1d38bb654a422b349b009f29697e4d2}',
-        version: 'v2.7' // or v2.1, v2.2, v2.3, ...
-      });
-    $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus(updateStatusCallback);
-  });
-
-}

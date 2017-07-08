@@ -8,7 +8,7 @@
 
 ; // just to sort out dodgy script concats.
 
-$.getScript("app.js")
+$.getScript("js/app.js")
 $.getScript("https://cdn.jsdelivr.net/handlebarsjs/4.0.8/handlebars.min.js")
 
 var fbfeed = fbpage + '/feed';

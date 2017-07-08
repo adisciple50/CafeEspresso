@@ -21,6 +21,6 @@ $(document).ready(function() {
 
 function fbsocial_feed(callback){
   $(callback).each(function(index, el) {
-    $("#fbsocial").append(template({message:el['message'],picture_src:el['from']['picture'],name:el['from']['first_name']));//render a template from the index.html <head>
+    $("#fbsocial").append(template({message:el['message'],picture_src:el['from']['picture'],name:el['from']['first_name']}));//render a template from the index.html <head>
   });
 }

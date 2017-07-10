@@ -1,25 +1,32 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!--Head scripts (use body footer where pisble)-->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js"></script>
+  <!--Styles-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+  <link rel="stylesheet" href="css/main.css" type="text/css"/>
+  <link rel="stylesheet" href="css/theme.css" type="text/css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis"/>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css" type="text/css"/>
+</head><!--END HEAD-->
 
+<body>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/main.css" type="text/css">
-  <link rel="stylesheet" href="css/theme.css" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css" rel="stylesheet">
-
+  <!-- TEMPLATES -->
+  
   <!-- begin social template -->
   <script type="text/x-handlebars-template" id="social-tmpl">
     <div class="col-md-4 container-fluid" id="comment-{{@index}}">
       <div class="col-sm-3">
-          <img src="{{#each from.picture}}"></img>
+        <img src="{{#each from.picture}}"></img>
       </div>
       <div class="col-sm-8">
         <p>{{#each name}}</p>
@@ -27,44 +34,27 @@
       </div>
     </div>
   </script>
+
   <!-- begin gallery template -->
   <script type="text/x-handlebars-template" id="gallery-tmpl">
     <div class="col-md-3 container-fluid" id="comment-{{@index}}">
       <img src="{{#each picture}}">
     </div>
   </script>
-</head>
+  <!--END TEMPLATES-->
 
-<body>
-  <!-- load facebook api for other scripts -->
+  <!-- load facebook api and main app script in one place -->
+  <script src="js/app.js"></script>
   <script>
-  // globals could go here.
-
-  // $.getScript('js/app.js');
-  window.fbAsyncInit = function() {
-    FB.init({
-        appId            : '139288266642775',
-        autoLogAppEvents : true,
-        status           : true,
-        xfbml            : true,
-        version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
-      });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+    //call to js/app.js callback instead of fb inline code
+    window.fbAsyncInit = window.initApp();
   </script>
   <!-- end facebook loader -->
 
   <nav class=" navbar navbar-expand-md navbar-light bg-faded text-center hveneer">
     <div class="container">
-      <button class="navbar-toggler navbar-toggler-right bg-faded" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon bg-faded"></span></button>
+      <button class="navbar-toggler navbar-toggler-right bg-faded" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent"
+        aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon bg-faded"></span></button>
       <div class="collapse navbar-collapse text-center justify-content-center border-radius" id="navbar2SupportedContent">
         <div class="btn-group">
           <a href="#Location" class="btn btn-primary">Our Location</a>
@@ -114,10 +104,12 @@
         <div class="col-md-6">
           <img src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" class="img-fluid img-thumbnail"> </div>
         <div class="col-md-6">
-          <p class="lead">We are a coffee bar which serves great local roasted coffee - at a pleasing price! The guy behind the counter will likely know what you like and how you like it (by memory - not extra sensory perception!) - and has almost a decade of barista
-            experiance.
+          <p class="lead">We are a coffee bar which serves great local roasted coffee - at a pleasing price! The guy behind the counter will
+            likely know what you like and how you like it (by memory - not extra sensory perception!) - and has almost a
+            decade of barista experiance.
             <br>
-            <br>As a social hub, we are situated within keynsham's "only serious bike shop" and the setting pulls in the cycling community from the surrounding cities and the coffee conisours from the town where we are situated.</p>
+            <br>As a social hub, we are situated within keynsham's "only serious bike shop" and the setting pulls in the
+            cycling community from the surrounding cities and the coffee conisours from the town where we are situated.</p>
         </div>
       </div>
     </div>
@@ -141,51 +133,6 @@
           <h1 class="text-center">Our Buzz</h1>
           <div class="py-5">
             <!-- facebook-feed -->
-            <script>
-              // copy paste more facebook - i cant JavaScript...
-              window.fbAsyncInit = function() {
-                FB.init({
-                    appId            : '139288266642775',
-                    autoLogAppEvents : true,
-                    status           : true,
-                    xfbml            : true,
-                    version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
-                  });
-                FB.AppEvents.logPageView();
-              };
-
-              (function(d, s, id){
-                 var js, fjs = d.getElementsByTagName(s)[0];
-                 if (d.getElementById(id)) {return;}
-                 js = d.createElement(s); js.id = id;
-                 js.src = "//connect.facebook.net/en_US/sdk.js";
-                 fjs.parentNode.insertBefore(js, fjs);
-               }(document, 'script', 'facebook-jssdk'));
-              // straight up copy of js/social.js
-              var fbpage = '/156900194833233';
-              var fbfeed = fbpage + '/feed';
-              var template = Handlebars.compile( $("#social-tmpl").html() );
-              $(document).ready(function() {
-                  /*
-                  FB.init({
-                    appId            : '139288266642775',
-                    autoLogAppEvents : true,
-                    status           : true,
-                    xfbml            : true,
-                    version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
-                  });// initialise facebook api.
-                  */
-                  FB.api(fbfeed,function(response){fbsocial_feed(response);}); //returns an array of facebook "post" objects to "callback"
-              });
-
-
-              function fbsocial_feed(callback){
-                $(callback).each(function(index, el) {
-                  $("#fbsocial").append(template({message:el['message'],picture_src:el['from']['picture'],name:el['from']['first_name']}));//render a template from the index.html <head>
-                });
-              }
-
-            </script>
             <div id="fbsocial">
 
             </div>
@@ -197,7 +144,7 @@
   <div class="bg-faded text-center py-5 my-3" id="Menu">
     <div class="container">
       <div>
-        <div class="row col-md-12" >
+        <div class="row col-md-12">
           <h1 class="text-center">The Menu And Tariff</h1>
           <table class="table text-white">
             <tbody>

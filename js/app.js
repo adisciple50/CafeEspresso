@@ -9,7 +9,7 @@ var endpoints = {
   }
 }
 var facebookSettings = {
-    appId            : '139288266642775',
+    appId            : '139288266642775', //TODO THIS APP ID IS WRONG
     autoLogAppEvents : true,
     status           : true,
     xfbml            : true,
@@ -23,12 +23,13 @@ window.addEventListener("DOMContentLoaded",function(){
   
   //I am patching without a server so to ensure it runs in real life I will get the origin and fix the js src origin acordingly.
   var origin = location.origin === "file://" ? "https:":"";
+  var lang = "en_US";
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = origin+"//connect.facebook.net/en_US/sdk.js";
+     js.src = origin+"//connect.facebook.net/"+lang+"/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
@@ -49,7 +50,7 @@ window.initApp = function(){
       tries++
       if(tries===10){
         clearTimeout(FbPoll);
-        console.log("FACEBOOK cannot be loaded for some reason. please check your DOMContentLoaded for tracing.")
+        console.log("FACEBOOK cannot be loaded for some reason. please check your console, facebook settings and DOMContentLoaded for tracing.")
       }
     }
   }, pollInterval)

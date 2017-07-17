@@ -11,19 +11,23 @@
 
 var fbpage = '/156900194833233';
 var fbfeed = fbpage + '/feed';
+var fbpicture = fbpage + '/picture';
 var template = Handlebars.compile( $("#gallery-tmpl").html() );
 $(document).ready(function() {
     FB.init(facebook_settings); // initialise facebook api.
-    FB.api(fbfeed,fbcover_pic(callback)); //returns an array of facebook "post" objects to "callback"
+    FB.api(fbpicture,fbcover_pic(callback)); //returns an array of facebook "post" objects to "callback"
     FB.api(fbfeed,fbgallery(callback)); //returns an array of facebook "post" objects to "callback"
 });
 
 function fbcover_pic(callback) {
+  picture = callback;
+  url = picture.data.url;
   // placeholder
+  console.log('url is' + url;);
+  $("#cafe-img").attr("src",url);
   return False;
 }
 
 function fbgallery(callback){
-  // placeholder
-  return False;
+  FB.api()
 }

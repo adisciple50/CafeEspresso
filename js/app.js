@@ -20,7 +20,7 @@ var facebookSettings = {
 // What to load when document object model is loaded.
 // 1 CREATE FB SCRIPT TAG DYNAMICLY TO START LOADING API - this allows FB init script to load EG.. initApp()
 window.addEventListener("DOMContentLoaded",function(){
-  
+
   //I am patching without a server so to ensure it runs in real life I will get the origin and fix the js src origin acordingly.
   var origin = location.origin === "file://" ? "https:":"";
   var lang = "en_US";
@@ -68,7 +68,7 @@ function appOnInit(){  //document ready ;)
   FB.AppEvents.logPageView();
 
   //helpful hints
-  if(debug){ 
+  if(debug){
     console.log("Running in debug mode, see useful info bellow.")
     console.log("APP: ",JSON.stringify(Object.assign(
       facebookSettings,
@@ -92,9 +92,9 @@ function appOnInit(){  //document ready ;)
       }
       else{
         var fbSocialFeedContext = {
-          message: item['message'], 
-          picture_src: item['from']['picture'], 
-          name: item['from']['first_name'] 
+          message: item['message'],
+          picture_src: item['from']['picture'],
+          name: item['from']['first_name']
         }
         if(debug){ console.log( template(fbSocialFeedContext) ) }
 

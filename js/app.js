@@ -88,7 +88,10 @@ function appOnInit(){  //document ready ;)
     //TEMPLATING
     $(callback).each(function (index, item) {
       if("error" in item){
-        if(debug){console.log("FB Social has sent an error instead of a bunch of data! check your page id, app id, online status. what is stoping data?")}
+        if(debug){
+          console.log("FB Social has sent an error instead of a bunch of data! check your page id, app id, online status. what is stoping data?")
+          console.log(callback);
+        }
       }
       else{
         var fbSocialFeedContext = {

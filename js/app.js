@@ -68,6 +68,11 @@ function appOnInit(){  //document ready ;)
   //DO STUFF HERE
   FB.init(facebookSettings);
   FB.AppEvents.logPageView();
+  // check login status  - https://developers.facebook.com/docs/facebook-login/web#logindialog
+  FB.getLoginStatus(function(response) {
+    console.log(response);
+  });
+
 
   //helpful hints
   if(debug){

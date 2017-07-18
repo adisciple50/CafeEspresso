@@ -1,6 +1,8 @@
 //for ease of use I have setup template from the Global window object, call template() instead of Handlebars.template or window.Handlebars.template (same thing)
 var template = window.Handlebars.template;
 
+
+const access_token = '1d38bb6549a422b349b009f29697e4d2';
 var fbpage = '156900194833233';
 var endpoints = {
   //add your endpoints here as getters
@@ -79,7 +81,7 @@ function appOnInit(){  //document ready ;)
 
   //CALLS
   //returns an array of facebook "post" objects to "callback"
-  FB.api( endpoints.feed, fbsocialFeed );
+  FB.api( endpoints.feed,{access_token:'1b02d3c8312abb42be267cadd63570c5'}, fbsocialFeed );
 
   //DEFINE HELPERS
   function fbsocialFeed(callback) {

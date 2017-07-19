@@ -2,9 +2,9 @@ body {
     background: url("../img/chipboard-copyleft.jpg");
 }
 .hveneer{
-    background-size: 111px;
+    background-size: contain;
     background-image: url("../img/wikimedia-veneer.jpg");
-    background-repeat: no-repeat; 
+
 }
 ul#navbar-nav.last{
     border-top-left-radius:15px;

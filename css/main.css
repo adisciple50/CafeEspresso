@@ -2,7 +2,7 @@ body {
     background: url("../img/chipboard-copyleft.jpg");
 }
 .hveneer{
-    background-size: contain;
+    background-size: 100%;
     background-image: url("../img/wikimedia-veneer.jpg");
 
 }

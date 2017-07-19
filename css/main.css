@@ -4,7 +4,7 @@ body {
 .hveneer{
     background-size: 111px;
     background-image: url("../img/wikimedia-veneer.jpg");
-    background-repeat:no-repeat; 
+    background-repeat: no-repeat; 
 }
 ul#navbar-nav.last{
     border-top-left-radius:15px;

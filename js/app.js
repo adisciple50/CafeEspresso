@@ -90,6 +90,8 @@ function appOnInit(){  //document ready ;)
   });
 
 
+
+
   //helpful hints
   if(debug){
     console.log("Running in debug mode, see useful info bellow.")
@@ -119,7 +121,6 @@ function appOnInit(){  //document ready ;)
       if("error" in item){
         if(debug){
           console.log("FB Social has sent an error instead of a bunch of data! check your page id, app id, online status. what is stoping data?")
-
           console.log(callback);
         }
       }
@@ -136,5 +137,6 @@ function appOnInit(){  //document ready ;)
         }
     });
   }
-
+  // begin instagram backup gallery
+  window.Instagram = require("instafeed");
 }

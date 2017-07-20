@@ -109,10 +109,10 @@ function appOnInit(){  //document ready ;)
   //DEFINE HELPERS
   function fbsocialFeed(callback) {
     FB.Event.subscribe('auth.authResponseChange', function(callback){
-      console.log(callback)
+      console.log(callback);
     });
     FB.Event.subscribe('auth.statusChange', function(callback){
-      console.log(callback)
+      console.log(callback);
     });
 
 
@@ -138,5 +138,5 @@ function appOnInit(){  //document ready ;)
     });
   }
   // begin instagram backup gallery
-  window.Instagram = require("instafeed");
+  window.Instafeed = require("instafeed");
 }

@@ -90,6 +90,12 @@ function appOnInit(){  //document ready ;)
 
   //DEFINE HELPERS
   function fbsocialFeed(callback) {
+    FB.Event.subscribe('auth.authResponseChange', function(callback){
+      console.log(callback)
+    });
+    FB.Event.subscribe('auth.statusChange', function(callback){
+      console.log(callback)
+    });
 
 
     //TEMPLATING
@@ -97,6 +103,7 @@ function appOnInit(){  //document ready ;)
       if("error" in item){
         if(debug){
           console.log("FB Social has sent an error instead of a bunch of data! check your page id, app id, online status. what is stoping data?")
+
           console.log(callback);
         }
       }

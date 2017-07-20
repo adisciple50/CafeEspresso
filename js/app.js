@@ -68,8 +68,24 @@ function appOnInit(){  //document ready ;)
   //DO STUFF HERE
   FB.init(facebookSettings);
   FB.AppEvents.logPageView();
+
+ // begin login .. beware popup blocker.
+  FB.login(function(response) {
+    if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+    } else {
+     console.log('User cancelled login or did not fully authorize.');
+    }
+  });
+
   // check login status  - https://developers.facebook.com/docs/facebook-login/web#logindialog
   FB.getLoginStatus(function(response) {
+    if(response.status === 'connected') {
+      console.log(response.authResponse.accessToken);
+    }
     console.log(response);
   });
 

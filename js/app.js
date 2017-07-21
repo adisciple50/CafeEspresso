@@ -44,7 +44,8 @@ window.initApp = function(){
   var pollInterval = 100; //ms
   var FbPoll = setInterval(function(){ // check to see if the FB libray is loaded every 100 ms.
     var tries = 0;
-    if("FB" in window && "instagramfeed" in window){
+    // if("FB" in window && "instagramfeed" in window){
+    if("FB" in window){
       clearTimeout(FbPoll);
       appOnInit();
     }

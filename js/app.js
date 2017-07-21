@@ -24,7 +24,7 @@ var instagramSettings = {
     target : '#instagram-gallery',
     clientId: '1c1c48d30d694bfa8244cc994ba4dae8',
     error(err){
-        console.log(err);
+        console.log(new Error(err));
     }
 }
 

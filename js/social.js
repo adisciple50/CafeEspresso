@@ -15,7 +15,7 @@ var fbfeed = fbpage + '/feed';
 var template = Handlebars.compile( $("#social-tmpl").html() );
 $(document).ready(function() {
     FB.init(facebook_settings); // initialise facebook api.
-    FB.api(fbfeed,fbsocial_feed(callback)); //returns an array of facebook "post" objects to "callback"
+    FB.api(fbfeed,fbsocial_feed(callback)); //returns an array of facebook "post" objects to "callback" 
 });
 
 

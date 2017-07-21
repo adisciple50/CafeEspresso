@@ -42,9 +42,9 @@ window.addEventListener("DOMContentLoaded",function(){
 window.initApp = function(){
   //FB is being an ass pain so lets poll for when it is defined!
   var pollInterval = 100; //ms
-  var FbPoll = setInterval(function(){
+  var FbPoll = setInterval(function(){ // check to see if the FB libray is loaded every 100 ms.
     var tries = 0;
-    if("FB" in window){
+    if("FB" in window && "instagramfeed" in window){
       clearTimeout(FbPoll);
       appOnInit();
     }

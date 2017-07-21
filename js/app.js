@@ -143,7 +143,7 @@ function appOnInit(){  //document ready ;)
           get: 'location',
           locationId: '156900194833233',
           template : $('#gallery-tmpl').html(),
-          target : 'instagram-gallery',
+          target : $('#instagram-gallery')[0],
           clientId: '1c1c48d30d694bfa8244cc994ba4dae8',
       });
       // d.run();

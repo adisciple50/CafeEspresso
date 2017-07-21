@@ -139,12 +139,13 @@ function appOnInit(){  //document ready ;)
   }
   // begin instagram backup gallery
   // window.Instafeed = require("instafeed");
-  window.instagramfeed = new Instafeed({
+  var instagramfeed = new Instafeed({
           get: 'location',
           locationId: '156900194833233',
           template : $('#gallery-tmpl').html(),
+          target : 'instagram-gallery',
           clientId: '1c1c48d30d694bfa8244cc994ba4dae8',
       });
       // d.run();
-
+  instagramfeed.run();
 }

@@ -138,7 +138,7 @@ function appOnInit(){  //document ready ;)
     });
   }
   // begin instagram backup gallery
-  window.Instafeed = require("instafeed");
+  // window.Instafeed = require("instafeed");
   window.instagramfeed = new Instafeed({
           get: 'location',
           locationId: '156900194833233',

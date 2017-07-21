@@ -17,7 +17,16 @@ var facebookSettings = {
     xfbml            : true,
     version          : 'v2.9' // or v2.8, v2.7, v2.6, v2.5, v2.4, v2.3,
 }
-
+var instagramSettings = {
+    get: 'location',
+    locationId: '156900194833233',
+    template : '<div class="col-md-3 container-fluid" id="image-{{id}}"><img src="{{picture}}" href="{{link}}"></div>',
+    target : '#instagram-gallery',
+    clientId: '1c1c48d30d694bfa8244cc994ba4dae8',
+    error(err){
+        console.log(err);
+    }
+}
 
 // What to load when document object model is loaded.
 // 1 CREATE FB SCRIPT TAG DYNAMICLY TO START LOADING API - this allows FB init script to load EG.. initApp()
@@ -39,33 +48,50 @@ window.addEventListener("DOMContentLoaded",function(){
 })
 //Init app is going to be attached to Global space and called instead of FBs code
 //We want to keep things in JS and not inline if posible.
-window.initApp = function(){
-  //FB is being an ass pain so lets poll for when it is defined!
+function pollForScript(propName, callback){
   var pollInterval = 100; //ms
   var FbPoll = setInterval(function(){ // check to see if the FB libray is loaded every 100 ms.
     var tries = 0;
     // if("FB" in window && "instagramfeed" in window){
-    if("FB" in window){
+    if(propName in window){
       clearTimeout(FbPoll);
-      appOnInit();
+      callback();
     }
     else{
       tries++
       if(tries===10){
+        console.log(10 + " attempts to load "+ propName + " bailing out.")
         clearTimeout(FbPoll);
-        console.log("FACEBOOK cannot be loaded for some reason. please check your console, facebook settings and DOMContentLoaded for tracing.")
       }
     }
   }, pollInterval)
 }
 
 
+window.initApp = function(){
+  pollForScript("FB", FacebookOnInit)
+  pollForScript("instagramfeed", InstagramOnInit)
+}
+
 var debug = true;
 
 /**
- * THE MAIN BIT YOUR CODE GOES HERE
+ * Instagram has loaded
+*/
+function InstagramOnInit(){
+  console.log("Instagram loaded")
+  var instagramfeed = new Instafeed(instagramSettings);
+  // d.run();
+  var run = instagramfeed.run();
+
+  console.log(run)
+}
+
+/**
+ * Facebook has loaded.
  */
-function appOnInit(){  //document ready ;)
+function FacebookOnInit(){  //document ready ;)
+  console.log("Facebook loaded")
   //DO STUFF HERE
   FB.init(facebookSettings);
   FB.AppEvents.logPageView();
@@ -140,18 +166,5 @@ function appOnInit(){  //document ready ;)
   }
   // begin instagram backup gallery
   // window.Instafeed = require("instafeed");
-  var instagramfeed = new Instafeed({
-          get: 'location',
-          locationId: '156900194833233',
-          template : '<div class="col-md-3 container-fluid" id="image-{{id}}"><img src="{{picture}}" href="{{link}}"></div>',
-          target : '#instagram-gallery',
-          clientId: '1c1c48d30d694bfa8244cc994ba4dae8',
-          error(err){
-              console.log(err);
-          }
-      });
-      // d.run();
-  var run = instagramfeed.run();
-
-  console.log(run)
+  
 }

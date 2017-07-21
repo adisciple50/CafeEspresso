@@ -19,3 +19,38 @@ ul#navbar-nav.first{
 .rounded{
     border-radius: 40px;
 }
+
+.hide-on-mobile,
+.hide-on-desktop{
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hide-on-mobile{
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .hide-on-desktop{
+        display: none;
+    }
+}
+
+.nav-link.btn{
+    color:#fff!important;
+}
+
+.navbar-toggler{
+    background:#bbb3af!important;
+    border-radius: 4px!important;
+    display: block;
+    width: 100%;
+}
+
+.navbar-collapse{
+    width: 100%!important;
+    display: flex!important;
+    flex: 1!important;
+    justify-content: center!important;
+}

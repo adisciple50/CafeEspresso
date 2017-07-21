@@ -39,11 +39,11 @@
   </script>
 
   <!-- begin gallery template -->
-  <script type="text/x-handlebars-template" id="gallery-tmpl">
-    <div class="col-md-3 container-fluid" id="comment-{{@index}}">
-      <img src="{{#each picture}}">
+  <div id="gallery-tmpl">
+    <div class="col-md-3 container-fluid" id="image-{{id}}" href="link">
+      <img src="{{picture}}">
     </div>
-  </script>
+  </div>
   <!--END TEMPLATES-->
 
   <!-- load facebook api and main app script in one place -->

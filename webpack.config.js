@@ -1,4 +1,5 @@
 const path = require("path");
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = function () {
     return {
@@ -12,9 +13,6 @@ module.exports = function () {
 
             filename: "bundle.js", // string
             // the filename template for entry chunks
-
-            publicPath: "/assets/", // string
-            // the url to the output directory resolved relative to the HTML page
 
             library: "MyLibrary", // string,
             // the name of the exported library
@@ -70,18 +68,15 @@ module.exports = function () {
         // lets you precisely control what bundle information gets displayed
 
         devServer: {
-            proxy: { // proxy URLs to backend development server
-                '/api': 'http://localhost:3000'
-            },
             contentBase: path.join(__dirname), // boolean | string | array, static file location
             compress: true, // enable gzip compression
             historyApiFallback: true, // true for index.html upon 404, object for multiple paths
             hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
             https: false, // true for self-signed, object for cert authority
-            noInfo: true, // only errors & warns on hot reload
+            noInfo: false, // only errors & warns on hot reload
         },
         plugins: [
-        
+            new LiveReloadPlugin()
         ],
     }
 }

@@ -8,9 +8,8 @@
   <!--Head scripts (use body footer where pisble)-->
   <script src="http://localhost:35729/livereload.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.js"></script>
+
 
   <script src="dist/bundle.js"></script>
   <!--Styles-->
@@ -24,21 +23,6 @@
 </head><!--END HEAD-->
 
 <body>
-
-  <!-- TEMPLATES -->
-
-  <!-- begin social template -->
-  <script type="text/x-handlebars-template" id="social-tmpl">
-    <div class="col-md-4 container-fluid" id="comment-{{@index}}">
-      <div class="col-sm-3">
-        <img src="{{#each from.picture}}"></img>
-      </div>
-      <div class="col-sm-8">
-        <p>{{#each name}}</p>
-        <p>{{#each message}}</p>
-      </div>
-    </div>
-  </script>
 
 <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-light hveneer">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +40,7 @@
     </ul>
   </div>
 </nav>
-  
+
   <div class="bg-faded py-0 text-center img-rounded my-1" id="Location">
     <div class="container-fluid">
       <div class="row" id="situation">
@@ -104,32 +88,6 @@
       </div>
     </div>
   </div>
-  <!--<div class="py-5  section bg-primary my-3 opaque" id="Gallery">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12" id="fb-gallery">
-          
-          <h1 class="text-center">The Gallery</h1>
-
-          <div class="py-5" id="instagram-gallery"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="py-5  section bg-primary my-3 opaque" id="Social">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="text-center">Our Buzz</h1>
-          <div class="py-5">
-            <div id="fbsocial">
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
   <div class="bg-faded text-center py-5 my-3" id="Menu">
     <div class="container">
       <div>
